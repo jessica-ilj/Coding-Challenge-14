@@ -30,7 +30,10 @@ class TicketService {
         } catch (error) {
             document.getElementById("error-message").textContent = error.message;
             throw error;
-             }
+             } finally { // Any loading cleanup if applicable (e.g., hiding a loading spinner)
+            console.log("Fetch operation completed."); // Placeholder for actual cleanup
+        }
+    }
 }
 
     // Step 3: Display Tickets Dynamically on the Page
