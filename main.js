@@ -14,7 +14,10 @@ const fetchTickets = async () => {
     } catch (error) {
         displayError(error.message); // Display error using a dedicated function
         throw error;
-
+} finally {
+        console.log("Fetch operation completed."); // Cleanup log
+    }
+};
 
     // Function to Display Tickets
 const displayTickets = tickets => {
