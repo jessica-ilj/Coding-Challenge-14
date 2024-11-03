@@ -23,10 +23,10 @@ const fetchTickets = async () => {
 const displayTickets = tickets => {
     const ticketElements = tickets.map(ticket => `
         <div class="ticket">
-            <h3>Ticket ID: ${ticket.id}</h3>
-            <p><strong>Customer Name (User ID):</strong> ${ticket.userId}</p>
-            <p><strong>Issue Description:</strong> ${ticket.title}</p>
-            <p><strong>Details:</strong> ${ticket.body}</p>
+             <h3>Ticket ID: ${ticket.id}</h3>
+            <p><i>Customer Name (User ID):</i>${ticket.userId}</p>
+            <p><i>Issue Description:</i> ${ticket.title}</p>
+            <p><i>Details:</i> ${ticket.body}</p>
             <hr>
         </div>
     `).join(''); // Create a string of HTML elements
