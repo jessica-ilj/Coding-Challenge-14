@@ -32,3 +32,25 @@ class TicketService {
             throw error;
              }
 }
+
+    // Step 3: Display Tickets Dynamically on the Page
+class TicketDisplay {
+    constructor(containerId) {
+        this.container = document.getElementById(containerId);
+    }
+
+    displayTickets(tickets) {
+        this.container.innerHTML = ""; // Clear previous content
+        tickets.forEach(ticket => {
+            const ticketElement = document.createElement("div");
+            ticketElement.className = "ticket";
+            ticketElement.innerHTML = `
+                <h2>Ticket ID: ${ticket.id}</h2>
+                <p><strong>Customer Name:</strong> User ${ticket.userId}</p>
+                <p><strong>Issue:</strong> ${ticket.title}</p>
+                <p><strong>Details:</strong> ${ticket.body}</p>
+            `;
+            this.container.appendChild(ticketElement);
+        });
+    }
+}
