@@ -38,3 +38,21 @@ const displayTickets = tickets => {
         </div>
     `;
 };
+
+//error display function
+const displayError = message => {
+    document.body.innerHTML += `
+        <div class="error-message" style="color: red;">
+            <h2>Error: ${message}</h2>
+        </div>
+    `;
+};
+
+(async () => {
+    try {
+        const tickets = await fetchTickets();
+        displayTickets(tickets);
+    } catch (error) {
+        console.log("Could not display tickets:", error.message); // Log error if tickets can't be displayed
+    }
+})();
